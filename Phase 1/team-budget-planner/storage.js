@@ -41,10 +41,6 @@ function createTable() {
 
 }
 
-// function getTotal(){
-// 	for
-// }
-
 function getData(){
     var str = localStorage.getItem("localData");
     if (str!= null)
