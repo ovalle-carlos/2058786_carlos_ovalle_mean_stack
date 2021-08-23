@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Shopping Cart<h1>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+	<div id = "cartSize">Cart Size: 0</div>
+	<ul>
+	<li>Item A, $1</li><button onClick="addToCart('a','1')">Add</button>
+	<li>Item B, $2</li><button onClick="addToCart('b','2')">Add</button>
+	<li>Item C, $3</li><button onClick="addToCart('c','3')">Add</button>
+	<li>Item D, $4</li><button onClick="addToCart('d','4')">Add</button>
+	</ul>
+    <button onClick="displayData()">Checkout</button>
+    <div id="checkout"></div>
+</body>
+</html>
