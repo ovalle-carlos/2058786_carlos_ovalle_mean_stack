@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Task Planner<h1>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+	<h1>Add Task</h1>
+    <form name ="details" action="/my-handling-form-page" method="post">
+       <ul>
+          <li>
+            <label for="emp_id">Emp Id:</label>
+            <input type="text" id="emp_id" name="emp_id">
+        </li>
+        <li>
+            <label for="task_id">Task Id:</label>
+            <input type="text" id="task_id" name="task_id">
+        </li>
+        <li>
+            <label for="task">Task:</label>
+            <input type="text" id="task" name="task">
+        </li>
+        <li>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+        </li>
+        </ul>
+    <script type="text/javascript" src="main.js"></script> 
+    <button onclick="addId()"; type = "button"; style=" cursor:pointer";>Add Task</button>
+    <h1>Delete Task</h1>
+    <form name ="details" action="/my-handling-form-page" method="post">
+    <ul>
+        <li>
+            <label for="delete_id">Task Id:</label>
+            <input type="text" id="delete_id" name="delete_id">
+        </li>
+    </ul>
+    <script type="text/javascript" src="main.js"></script> 
+    <button onclick="deleteId()"; type = "button"; style=" cursor:pointer";>Delete Task</button>
+    <h1>List Task</h1>
+    <div id="addHere"></div>
+</body>
+</html>
