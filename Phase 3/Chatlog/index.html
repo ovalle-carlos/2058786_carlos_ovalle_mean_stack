@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatlog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">   
+    <script src = "/socket.io/socket.io.js"></script>
+    
+</head>
+
+
+<body>
+    <h1 style = "text-align: center;">CHAT LOG</h1>
+    <form id = "message_details" onsubmit="return false" action="" style = "border-style: double; margin-left:30%; margin-right:30%">
+        <label for="">Name: </label>
+        <input type="text" name = "name" id = "name" required oninput= "clear_msg()"><br>
+        <label for="">Message: </label>
+        <input type="text" name = "message" id = "message" oninput="clear_msg()" required><br>
+        <input type="submit" value = "SEND" onclick = "send_msg()">
+        <input type="reset" value = "RESET">
+    </form>
+    <div id = "cmsg" style = "margin-left:30%;color:blueviolet"></div>
+    <script type = "text/JavaScript">
+        function send_msg(){
+            var socket = io();
+
+            let n = document.forms["message_details"]["name"].value;
+            let m = document.forms["message_details"]["message"].value;
+
+            socket.emit("msg_name",n);
+            socket.emit("msg_detail",m);
+            
+            socket.on("server_msg",(servermsg)=>{
+                document.getElementById("cmsg").innerHTML = servermsg;
+            })
+            document.forms["message_details"]["name"].value = "";
+            document.forms["message_details"]["message"].value = ""; 
+            
+        }
+        clear_msg = ()=>{
+            document.getElementById("cmsg").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
